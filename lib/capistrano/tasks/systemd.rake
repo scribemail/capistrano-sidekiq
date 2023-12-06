@@ -127,7 +127,7 @@ namespace :sidekiq do
 
   def sidekiq_service_unit_name(config_file)
     if config_file != "sidekiq.yml"
-      fetch(:sidekiq_service_unit_name) + "&" + File.basename(config_file, ".*").split("-").last
+      fetch(:sidekiq_service_unit_name) + "@" + File.basename(config_file, ".*").split("-").last
     else
       fetch(:sidekiq_service_unit_name)
     end
